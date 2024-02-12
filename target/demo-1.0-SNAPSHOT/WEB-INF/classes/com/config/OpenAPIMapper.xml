@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.config.OpenAPIMapper">
+
+    <!-- selectLocation -->
+    <insert id="insertAll" parameterType="com.example.dto.WifiDTO">
+        insert into wifi ( X_SWIFI_MGR_NO
+                         , X_SWIFI_WRDOFC
+                         , X_SWIFI_MAIN_NM
+                         , X_SWIFI_ADRES1
+                         , X_SWIFI_ADRES2
+                         , X_SWIFI_INSTL_FLOOR
+                         , X_SWIFI_INSTL_TY
+                         , X_SWIFI_INSTL_MBY
+                         , X_SWIFI_SVC_SE
+                         , X_SWIFI_CMCWR
+                         , X_SWIFI_CNSTC_YEAR
+                         , X_SWIFI_INOUT_DOOR
+                         , X_SWIFI_REMARS3
+                         , LAT
+                         , LNT
+                         , WORK_DTTM)
+        values ( #{X_SWIFI_MGR_NO}
+               , #{X_SWIFI_WRDOFC}
+               , #{X_SWIFI_MAIN_NM}
+               , #{X_SWIFI_ADRES1}
+               , #{X_SWIFI_ADRES2}
+               , #{X_SWIFI_INSTL_FLOOR}
+               , #{X_SWIFI_INSTL_TY}
+               , #{X_SWIFI_INSTL_MBY}
+               , #{X_SWIFI_SVC_SE}
+               , #{X_SWIFI_CMCWR}
+               , #{X_SWIFI_CNSTC_YEAR}
+               , #{X_SWIFI_INOUT_DOOR}
+               , #{X_SWIFI_REMARS3}
+               , #{lat}
+               , #{lnt}
+               , #{WORK_DTTM})
+    </insert>
+
+   <delete id="deleteAll">
+       delete from wifi
+   </delete>
+
+</mapper>

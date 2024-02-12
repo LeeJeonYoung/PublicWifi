@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.config.BookmarkMapper">
+
+    <select id="selectBookmark" resultType="com.example.dto.BookmarkDTO">
+        select *
+        from bookmark
+        order by id
+    </select>
+
+    <insert id="insertBookmark" parameterType="com.example.dto.BookmarkDTO">
+        insert into bookmark(name,wifiNm,ins_tms)
+        values(#{name}, #{wifiNm},datetime('now','localtime'))
+    </insert>
+
+    <delete id="deleteBookmark" parameterType="com.example.dto.BookmarkDTO">
+        delete from bookmark
+        where id = #{id}
+    </delete>
+
+</mapper>
